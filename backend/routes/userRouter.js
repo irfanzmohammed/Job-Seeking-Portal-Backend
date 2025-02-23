@@ -11,16 +11,16 @@ router.post("/register", register);
 router.post("/login", login);
 
 // Route for user logout (requires authentication)
-router.get("/logout", isAuthenticated, logout);
+router.get("/logout",  logout);
 
 // Route for getting logged-in user details (requires authentication)
-router.get("/getuser", isAuthenticated, getUser);
+router.get("/getuser", getUser);
 
 // Route for fetching job seeker skills (requires authentication)
-router.get("/skills", isAuthenticated, getUserSkills);
+router.get("/skills",  getUserSkills);
 
 // Route for adding a new skill to user's profile (requires authentication)
-router.post("/skills/add", isAuthenticated, addUserSkill);
+router.post("/skills/add", addUserSkill);
 
 export default router;
 
