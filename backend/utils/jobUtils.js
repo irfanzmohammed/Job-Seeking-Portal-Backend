@@ -3,7 +3,7 @@ import axios from 'axios';
 // Fetch all jobs from the backend API
 export const fetchAllJobs = async () => {
   try {
-    const response = await axios.get('http://localhost:4000/api/v1/jobs');
+    const response = await axios.get('https://jobzee-delta.vercel.app/api/v1/jobs');
     return response.data.jobs;
   } catch (error) {
     console.error('Failed to fetch jobs:', error);

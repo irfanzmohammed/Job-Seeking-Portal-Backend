@@ -68,6 +68,7 @@ export const logout = catchAsyncErrors(async (req, res, next) => {
 // Get logged-in user details
 export const getUser = catchAsyncErrors(async (req, res, next) => {
   const user = req.user;
+  console.log(req.user);
   res.status(200).json({ success: true, user });
 });
 
