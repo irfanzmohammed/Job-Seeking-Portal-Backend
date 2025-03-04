@@ -57,14 +57,15 @@ export const login = catchAsyncErrors(async (req, res, next) => {
 
 // Logout user
 export const logout = catchAsyncErrors(async (req, res, next) => {
-  res.cookie("token", "", {
+  res
+  .status(201)
+  .cookie("token", "", {
     httpOnly: true,
     expires: new Date(Date.now()),
     secure: true, 
     sameSite: "none", // Allows cross-origin cookies
-  });
-
-  res.status(200).json({ success: true, message: "User logged out successfully." });
+  })
+  .json({ success: true, message: "User logged out successfully." });
 });
 
 // Get logged-in user details
